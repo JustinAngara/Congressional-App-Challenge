@@ -5,18 +5,18 @@ Hello! This is a collaborative project done for the Congressional App Challenge!
 
 # Current Technologies used:
 
-JavaScript
+•JavaScript
 
-HTML5
+•HTML5
 
-CSS3
+•CSS3
 
 # APIs Used:
 
 
-*mockAPI
+•mockAPI
 
-*positionstack
+•positionstack
 
 
 # HOW TO USE:
