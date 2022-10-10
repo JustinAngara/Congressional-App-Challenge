@@ -19,3 +19,4 @@ HOW TO USE:
 5.) Open vsc/ide of your choosing and open the said folder
 6.) Go to index.js and follow the instructions from line 1-10
 7.) Run index.html and you're all done!
+ 
