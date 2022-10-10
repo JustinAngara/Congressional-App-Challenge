@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warning Map App </title>
-    
+    <title>Warning Map</title>
+    <link rel = "icon" href = 
+    "http://www.clker.com/cliparts/L/D/0/8/Z/b/global-icon-th.png" 
+            type = "image/x-icon">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
+<body> 
 
-    <div >
+    <div>
         <div class="nav">
         <!--Navbar-->
         <nav class="navbar navbar-light amber lighten-4 mb-4">
@@ -30,35 +32,44 @@
                 <!-- Links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Submit a report</a>
+                    <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Submit a report</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
             </div>
         </nav>
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class = "modal-header">
                     <h4 class = "modal-title">Submit a report</h4>
                 </div>
-                <div class = "container">
-                    <form>
+                            
 
-                        <label>Enter Street Address:</label>
-                            <input id="streetAdd"></input></br>
-                        <label required>Enter City:</label>
-                            <input id="cityAdd" required></input></br>
-                        <label>Enter State:</label> 
-                            <input id="stateAdd" placeholder="e.g. LA OR province/area" required></input></br>
+                <div id="modalContent"class = "container">
+                    <form id ="reportForm">
+                        <label>Enter Street Address</label>
+                            <input id="streetAdd" align="right" required></input></br>
+                        <label>Enter City</label>
+                            <input id="cityAdd" align="right" required></input></br>
+                        <label>Enter State</label> 
+                            <input id="stateAdd" placeholder="e.g. LA OR province/area" align="right" required></input></br>
                         
-                        <button id="submitBtn" type="button" class="btn btn-primary">Submit</button>
+                        <label>Enter Description:</label></br>
+                        <textarea id="description" rows="4" cols="50"></textarea>
+                        
+                        </br><button id="submitBtn" type="button" class="btn btn-primary">Submit</button>
                     </form>
+
                 </div> 
 
                 <div class = "modal-footer">
@@ -69,10 +80,10 @@
         </div>
     </div>
     </div>
+    
     <div>  
-        <div id="map"></div>
-          
-    </div>
+        <div id="map"></div>  
+    </div> 
     
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"

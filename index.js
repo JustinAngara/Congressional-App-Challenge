@@ -1,12 +1,12 @@
 
 // IMPORTANT -> You must register an API key at mockapi.io
 // IMPORTANT -> Get your API key and place it into the variable down below 
-const MOCKAPI_KEY = "";
+const MOCKAPI_KEY = "6340961b16ffb7e275c2ff85";
 
 
 // IMPORTANT -> You must register an API key at positionstack.com
 // IMPORTANT -> Get your API key and place it into the variable down below  
-const POSITIONAPI_KEY = "";
+const POSITIONAPI_KEY = "7ad868dc0b100140d4698a0b98c9e669";
 
 
 
@@ -14,12 +14,13 @@ const POSITIONAPI_KEY = "";
 let arrayOfMarkers = [];
 
 // anon function to createLocs
-const createLoc = async (l,la) => {
+const createLoc = async (l,la,m) => {
   // l -> longitude
   // la -> latitude
   const newProduct = {
     lng: l,
-    lat: la
+    lat: la,
+    message: m
   }
   
   // UPDATING THE DATA ON THE BACKEND 
@@ -39,7 +40,7 @@ const initMap = async () => {
 
   // Initilazation of the map setting up
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
+    zoom: 6,
     center: start,
   });
   
@@ -52,15 +53,17 @@ const initMap = async () => {
   let formattedMarkers = [];
   arrayOfMarkers = data.map((e)=>{
     //adds objects with correct attributes to the formattedMarkers array
-    formattedMarkers.push({
-      lat: e.lat,
-      lng: e.lng
-    })
+    if(e.lat >=-90 && e.lat <=90 && e.lng >=-180 && e.lng<=180){
+      formattedMarkers.push({
+        lat: e.lat,
+        lng: e.lng
+      })
+    }
   });
   // formatterMarkers is the proper variable to use for adding/removing markers  
 
   // image location
-  let url = "./icons/My Project.png"
+  let url = "./icons/d2.png"
 
   // adds markers
   for(let i =0;i<formattedMarkers.length;i++){
@@ -101,15 +104,39 @@ const getLngLat = async(address, city, state)=>{
 
 // event listener when user submits a report
 // passes in anon function
-document.getElementById("submitBtn").addEventListener("click", ()=>{
+document.getElementById("submitBtn").addEventListener("click", (e)=>{
   // uses jQuery to get refernece id then uses val method in order to return input text field 
   let city = $('#cityAdd').val();
   let state = $('#stateAdd').val();
   let street = $('#streetAdd').val();
-  
+  let message = $('#description').val();
   // calls in createLoc function when promise is fulfilled 
   // passes longitude then latitude 
+  changeSubmitBtn();
   getLngLat(street,city,state).then((data)=>{
-    createLoc(data[1], data[0]);
-  });
+    createLoc(data[1], data[0],message).then(()=>{
+      location.reload();
+    });
+  }); 
 });
+
+function changeSubmitBtn(){
+  /*
+  
+    <div>
+        
+      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+    </div>
+  */
+
+  $("#modalContent").append(`
+  <div>    
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+  `);
+  $("#submitBtn").remove();
+
+  
+}
+
