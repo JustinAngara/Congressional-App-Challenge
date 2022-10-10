@@ -11,6 +11,10 @@ Hello! This is a collaborative project done for the Congressional App Challenge!
 
 •CSS3
 
+•Bootstrap 4
+
+•jQuery
+
 # APIs Used:
 
 
