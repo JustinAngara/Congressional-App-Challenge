@@ -1,12 +1,12 @@
 
 // IMPORTANT -> You must register an API key at mockapi.io
 // IMPORTANT -> Get your API key and place it into the variable down below 
-const MOCKAPI_KEY = "6340961b16ffb7e275c2ff85";
+const MOCKAPI_KEY = "";
 
 
 // IMPORTANT -> You must register an API key at positionstack.com
 // IMPORTANT -> Get your API key and place it into the variable down below  
-const POSITIONAPI_KEY = "7ad868dc0b100140d4698a0b98c9e669";
+const POSITIONAPI_KEY = "";
 
 
 
