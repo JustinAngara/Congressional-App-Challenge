@@ -23,7 +23,7 @@ Hello! This is a collaborative project done for the Congressional App Challenge!
 •positionstack
 
 
-# HOW TO USE
+# How To Use
 
 1.) Create a folder to save the project in
 
