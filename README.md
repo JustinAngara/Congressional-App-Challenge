@@ -3,7 +3,7 @@ Warning Map Application
 
 Hello! This is a collaborative project done for the Congressional App Challenge!
 
-Current Technologies used:
+# Current Technologies used:
 
 JavaScript
 
@@ -11,7 +11,7 @@ HTML5
 
 CSS3
 
-APIs Used:
+# APIs Used:
 
 
 *mockAPI
@@ -19,7 +19,7 @@ APIs Used:
 *positionstack
 
 
-HOW TO USE:
+# HOW TO USE:
 
 1.) Create a folder to save the project in
 
