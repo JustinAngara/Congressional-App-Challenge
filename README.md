@@ -3,7 +3,7 @@ Warning Map Application
 
 Hello! This is a collaborative project done for the Congressional App Challenge!
 
-# Current Technologies used:
+# Current Technologies used
 
 •JavaScript
 
@@ -15,7 +15,7 @@ Hello! This is a collaborative project done for the Congressional App Challenge!
 
 •jQuery
 
-# APIs Used:
+# APIs Used
 
 
 •mockAPI
@@ -23,7 +23,7 @@ Hello! This is a collaborative project done for the Congressional App Challenge!
 •positionstack
 
 
-# HOW TO USE:
+# HOW TO USE
 
 1.) Create a folder to save the project in
 
