@@ -20,6 +20,18 @@ const POSITIONAPI_KEY = "7ad868dc0b100140d4698a0b98c9e669";
 let arrayOfMarkers = [];
 
 
+// negative iamge  
+let generalN = "./icons/d2.png"
+
+// theft image
+let theftimg = "./icons/r7.png"
+
+// harassment image
+let harasimg = "./icons/h2.png";
+
+// safety image
+let safeimg = "./icons/s2.png";
+
 /**
  * anon function to create markers given location,
  * m param is used to save in the db
@@ -97,17 +109,6 @@ const initMap = async () => {
     center: start,
     
   });
-    // general negative iamge  
-    let generalN = "./icons/d2.png"
-
-    // theft image
-    let theftimg = "./icons/r7.png"
-    
-    // harassment image
-    let harasimg = "./icons/h2.png";
-  
-    // safety image
-    let safeimg = "./icons/s3.png";
   // creates legend
   const icons = {
     negative: {
@@ -141,11 +142,6 @@ const initMap = async () => {
 
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
 
-
-
-
-
-
  
   // BACK END MOCKAPI
   const response = await fetch(`https://${MOCKAPI_KEY}.mockapi.io/locations`);
@@ -166,8 +162,6 @@ const initMap = async () => {
 
 
   let fIcon=generalN;
-  
-  
 
   getMessages().then((e)=>{
     const infoWindow = new google.maps.InfoWindow();
@@ -219,18 +213,6 @@ const initMap = async () => {
 
 
 getIconImg = (type) =>{
-
-  // general negative iamge  
-  let generalN = "./icons/d2.png"
-
-  // theft image
-  let theftimg = "./icons/r7.png"
-  
-  // harassment image
-  let harasimg = "./icons/h2.png";
-
-  // safety image
-  let safeimg = "./icons/s2.png";
   if(type=="positive"){
     return safeimg;
   } else if(type=="theft"){
