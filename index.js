@@ -4,15 +4,15 @@
  * IMPORTANT -> Get your API key and place it into the variable down below 
  */
 
-const MOCKAPI_KEY = "";
+const MOCKAPI_KEY = "6340961b16ffb7e275c2ff85";
 
- 
+
 
 /**
  * IMPORTANT -> You must register an API key at mockapi.io
  * IMPORTANT -> Get your API key and place it into the variable down below 
  */
-const POSITIONAPI_KEY = "";
+const POSITIONAPI_KEY = "7ad868dc0b100140d4698a0b98c9e669";
 
 
 
@@ -21,7 +21,7 @@ let arrayOfMarkers = [];
 
 
 /**
- * anon function to create markers given location
+ * anon function to create markers given location,
  * m param is used to save in the db
  */
 const createLoc = async (l,la,m) => {
@@ -97,7 +97,55 @@ const initMap = async () => {
     center: start,
     
   });
+    // general negative iamge  
+    let generalN = "./icons/d2.png"
+
+    // theft image
+    let theftimg = "./icons/r7.png"
+    
+    // harassment image
+    let harasimg = "./icons/h2.png";
   
+    // safety image
+    let safeimg = "./icons/s3.png";
+  // creates legend
+  const icons = {
+    negative: {
+      name: "Unsafe area",
+      icon: generalN,
+    },
+    harassment: {
+      name: "Harassment",
+      icon: harasimg,
+    },
+    theft: {
+      name: "Robbery",
+      icon: theftimg,
+    },
+    positive: {
+      name: "Safe area",
+      icon: safeimg
+    }
+  };
+  const legend = document.getElementById("legend");
+
+  for (const key in icons) {
+    const type = icons[key];
+    const name = type.name;
+    const icon = type.icon;
+    const div = document.createElement("div");
+
+    div.innerHTML = '<img src="' + icon + '"> ' + name;
+    legend.appendChild(div);
+  }
+
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+
+
+
+
+
+
  
   // BACK END MOCKAPI
   const response = await fetch(`https://${MOCKAPI_KEY}.mockapi.io/locations`);
@@ -117,7 +165,6 @@ const initMap = async () => {
   // formatterMarkers is the proper array to hold valid markers with proper attributes  
 
 
-  let generalN = "./icons/d2.png"
   let fIcon=generalN;
   
   
@@ -169,19 +216,21 @@ const initMap = async () => {
 }
 
 
+
+
 getIconImg = (type) =>{
+
   // general negative iamge  
   let generalN = "./icons/d2.png"
 
   // theft image
-  let theftimg = "./icons/t5.png"
+  let theftimg = "./icons/r7.png"
   
   // harassment image
   let harasimg = "./icons/h2.png";
 
   // safety image
   let safeimg = "./icons/s2.png";
-
   if(type=="positive"){
     return safeimg;
   } else if(type=="theft"){
@@ -252,13 +301,4 @@ function changeSubmitBtn(){
   `);
   $("#submitBtn").remove();
 }
-
-
-
-
-
-
-
-
-
 
