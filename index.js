@@ -6,7 +6,7 @@
 
 const MOCKAPI_KEY = "";
 
-
+ 
 
 /**
  * IMPORTANT -> You must register an API key at mockapi.io
@@ -21,7 +21,7 @@ let arrayOfMarkers = [];
 
 
 /**
- * anon function to create markers given location,
+ * anon function to create markers given location
  * m param is used to save in the db
  */
 const createLoc = async (l,la,m) => {
