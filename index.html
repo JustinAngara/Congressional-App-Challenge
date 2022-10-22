@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body> 
+<body>  
 
     <div>
         <div class="nav">
@@ -38,14 +38,36 @@
                     <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Submit a report</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Statistics</a>
+                    <a class="nav-link" data-toggle="modal" data-target=".responses-modal">Statistics</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
             </div>
         </nav>
+
+        <div class="modal responses-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Statistics</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- text -->
+                  here text
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">✖</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
             <div class="modal-dialog modal-lg">
@@ -58,7 +80,7 @@
                 <div id="modalContent"class = "container">
                     <form id ="reportForm">
                         <label>Enter Street Address</label>
-                            <input id="streetAdd" align="right" required></input></br>
+                            <input id="streetAdd" align="right" autocomplete="off" required></input></br>
                         <label>Enter City</label>
                             <input id="cityAdd" align="right" required></input></br>
                         <label>Enter State</label> 
@@ -82,6 +104,7 @@
     </div>
     
     <div>  
+        <!--  style="filter: invert(90%)" -->
         <div id="map"></div>  
     </div> 
     
