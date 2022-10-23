@@ -1,121 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warning Map</title>
-    
-    <link rel = "icon" href = 
-    "http://www.clker.com/cliparts/L/D/0/8/Z/b/global-icon-th.png" 
-            type = "image/x-icon">
+
+    <link rel="icon" href="http://www.clker.com/cliparts/L/D/0/8/Z/b/global-icon-th.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>  
+
+<body>
 
     <div>
         <div class="nav">
-        <!--Navbar-->
-        <nav class="navbar navbar-light amber lighten-4 mb-4">
-            <!-- Navbar brand -->
-            <a class="navbar-brand text" href="#">Warning App</a>
-    
-            <!-- Collapse button -->
-            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
-                aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="animated-icon1"><span></span><span></span><span></span></div>
-            </button>
-    
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent20">
-    
-                <!-- Links -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Submit a report</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target=".responses-modal">Statistics</a>
-                </li>
+            <!--Navbar-->
+            <nav class="navbar navbar-light amber lighten-4 mb-4">
+                <!-- Navbar brand -->
+                <a class="navbar-brand text" href="#">Warning App</a>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-            </ul>
+                <!-- Collapse button -->
+                <button class="navbar-toggler first-button" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent20" aria-controls="navbarSupportedContent20"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-icon1"><span></span><span></span><span></span></div>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Submit a
+                                report</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target=".responses-modal">Statistics</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="modal responses-modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Statistics</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- text -->
+                            here text
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">✖</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
 
-        <div class="modal responses-modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Statistics</h5> 
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Submit a report</h4>
+                        </div>
+
+
+                        <div id="modalContent" class="container">
+                            <form id="reportForm">
+                                <label>Enter Street Address</label>
+                                <input id="streetAdd" align="right" autocomplete="off" required></input></br>
+                                <label>Enter City</label>
+                                <input id="cityAdd" align="right" required></input></br>
+                                <label>Enter State</label>
+                                <input id="stateAdd" placeholder="e.g. LA OR province/area" align="right"
+                                    required></input></br>
+
+                                <label>Enter Description:</label></br>
+                                <textarea id="description" rows="4" cols="50"></textarea>
+
+                                </br><button id="submitBtn" type="button" class="btn btn-primary">Submit</button>
+                            </form>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-dismiss="modal">✖</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                  <!-- text -->
-                  here text
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">✖</button>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class = "modal-header">
-                    <h4 class = "modal-title">Submit a report</h4>
-                </div>
-                            
-
-                <div id="modalContent"class = "container">
-                    <form id ="reportForm">
-                        <label>Enter Street Address</label>
-                            <input id="streetAdd" align="right" autocomplete="off" required></input></br>
-                        <label>Enter City</label>
-                            <input id="cityAdd" align="right" required></input></br>
-                        <label>Enter State</label> 
-                            <input id="stateAdd" placeholder="e.g. LA OR province/area" align="right" required></input></br>
-                        
-                        <label>Enter Description:</label></br>
-                        <textarea id="description" rows="4" cols="50"></textarea>
-                        
-                        </br><button id="submitBtn" type="button" class="btn btn-primary">Submit</button>
-                    </form>
-
-                </div> 
-
-                <div class = "modal-footer">
-                    <button type = "button" class ="btn btn-dark" data-dismiss= "modal">✖</button>
-                 </div>
-              </div>
             </div>
         </div>
     </div>
-    </div>
-    
-    <div>  
+
+    <div>
         <!--  style="filter: invert(90%)" -->
-        <div id="map"></div>  
-        <div id="legend"><h3 class="textLegend">Legend</h3></div>
-    </div> 
-    
+        <div id="map"></div>
+        <div id="legend">
+            <h3 class="textLegend">Legend</h3>
+        </div>
+    </div>
+
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-      defer
-    ></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+        defer></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
