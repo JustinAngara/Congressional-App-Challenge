@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@googlemaps/markerclusterer": "^2.0.11",
+    "@googlemaps/markerclusterer": "^2.0.13",
     "bootstrap": "^4.4.1"
   }
 }
