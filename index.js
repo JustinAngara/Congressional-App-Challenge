@@ -37,6 +37,7 @@
  const createLoc = async (l,la,m) => {
    // l -> longitude
    // la -> latitude
+   // m -> message
    const newProduct = {
      lng: l,
      lat: la,
@@ -102,7 +103,7 @@
    // Initilazation of the map setting up
    const map = new google.maps.Map(document.getElementById("map"), {
      mapId:"9c6f810b0563cd4",
-     zoom: 5,
+     zoom: 4,
      center: start,
      
    });
@@ -172,7 +173,7 @@
      // adds markers
      for(let i =0;i<formattedMarkers.length;i++){
 
-      var millisecondsToWait = 25*i;
+      let millisecondsToWait = 25*i;
       setTimeout(function() {
         // adds marker objects from the formattedMarkers array of objects
         let type = messagesArray[i].type 
@@ -299,8 +300,16 @@ getDate = () =>{
 Date.prototype.timeNow = function () {
   return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
 }
- // adds map to html
- window.initMap = initMap;
+
+// adds map to html
+window.initMap = initMap;
 
 
+window.onload = function() {
+  Particles.init({
+    selector: '.background',
+    color: ['#FFFFFF'],
+    connectParticles:true
+  });
+};
 

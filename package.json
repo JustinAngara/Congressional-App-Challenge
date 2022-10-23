@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@googlemaps/markerclusterer": "^2.0.13",
-    "bootstrap": "^4.4.1"
+    "bootstrap": "^4.4.1",
+    "particlesjs": "^2.2.3"
   }
 }

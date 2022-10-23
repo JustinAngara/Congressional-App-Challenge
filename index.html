@@ -9,12 +9,13 @@
 
     <link rel="icon" href="http://www.clker.com/cliparts/L/D/0/8/Z/b/global-icon-th.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
+    
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body>
 
-    <div>
+    <div class="absolute">
         <div class="nav">
             <!--Navbar-->
             <nav class="navbar navbar-light amber lighten-4 mb-4">
@@ -34,42 +35,18 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Submit a
                                 report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target=".responses-modal">Statistics</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="about.html">About</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-
-            <div class="modal responses-modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Statistics</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- text -->
-                            here text
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">✖</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
                 aria-hidden="true">
@@ -112,7 +89,7 @@
         <!--  style="filter: invert(90%)" -->
         <div id="map"></div>
         <div id="legend">
-            <h3 class="textLegend">Legend</h3>
+            <h3 class="textLegend">Map Symbols</h3>
         </div>
     </div>
 
